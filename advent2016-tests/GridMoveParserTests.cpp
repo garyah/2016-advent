@@ -18,8 +18,26 @@ namespace advent2016tests
             char input[] = "R2, L3";
             parser.parse(input);
             auto shortestPathDistance = parser.getShortestPathDistance();
-            Assert::AreEqual((float)5, (float)shortestPathDistance, 0.f, L"First test input did not produce expected test output");
+            Assert::AreEqual((float)5, (float)shortestPathDistance, 0.f);
 		}
 
-	};
+        TEST_METHOD(TestMethod2)
+        {
+            GridMoveParser parser;
+            char input[] = "R2, R2, R2";
+            parser.parse(input);
+            auto shortestPathDistance = parser.getShortestPathDistance();
+            Assert::AreEqual((float)2, (float)shortestPathDistance, 0.f);
+        }
+
+        TEST_METHOD(TestMethod3)
+        {
+            GridMoveParser parser;
+            char input[] = "R5, L5, R5, R3";
+            parser.parse(input);
+            auto shortestPathDistance = parser.getShortestPathDistance();
+            Assert::AreEqual((float)12, (float)shortestPathDistance, 0.f);
+        }
+
+    };
 }
