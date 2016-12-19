@@ -39,5 +39,14 @@ namespace advent2016tests
             Assert::AreEqual((float)12, (float)shortestPathDistance, 0.f);
         }
 
+        TEST_METHOD(RotatingLeftFromNorthGoesWest)
+        {
+            GridMoveParser parser;
+            char input[] = "L5, R5, R3";
+            parser.parse(input);
+            auto shortestPathDistance = parser.getShortestPathDistance();
+            Assert::AreEqual((float)7, (float)shortestPathDistance, 0.f);
+        }
+
     };
 }
