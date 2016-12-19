@@ -11,8 +11,9 @@ int main()
 	char *line = NULL;
 	while ((line = InputReader::ReadLine()) != NULL)
 	{
-		// TODO: invoke class code here
-		(void)printf("%s\n", line);
+        GridMoveParser parser;
+        parser.parse(line);
+        (void)printf("%u\n", parser.getShortestPathDistance());
 	}
 	return 0;
 }
