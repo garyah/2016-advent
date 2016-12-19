@@ -11,7 +11,6 @@ namespace Advent2016
             East,
             South,
             West,
-            NumHeadings,
         } Heading;
 
         typedef enum
@@ -50,8 +49,8 @@ namespace Advent2016
                     if ('L' == *p || 'R' == *p)
                     {
                         numberToParse = p + 1;
-                        if ('L' == *p) m_heading = static_cast<Heading>((m_heading - 1) % NumHeadings);
-                        if ('R' == *p) m_heading = static_cast<Heading>((m_heading + 1) % NumHeadings);
+                        if ('L' == *p) m_heading = static_cast<Heading>(((unsigned)m_heading - 1) % (West + 1));
+                        if ('R' == *p) m_heading = static_cast<Heading>(((unsigned)m_heading + 1) % (West + 1));
                         m_parseState = Parsing;
                     }
                 }
