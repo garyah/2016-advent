@@ -65,6 +65,9 @@ namespace Advent2016
                         if (parsedNumber >= 0)
                         {
                             updatePosition(parsedNumber);
+#ifdef TEST_DEBUG
+                            (void)printf("%s, heading=%s, x=%d, y=%d, distance=%u\n", numberToParse - 1, headingToString(), m_x, m_y, m_shortestPathDistance);
+#endif
                         }
                         m_parseState = NotParsing;
                     }
@@ -103,6 +106,25 @@ namespace Advent2016
             }
             m_shortestPathDistance = std::abs(m_x) + std::abs(m_y);
         }
+
+#ifdef TEST_DEBUG
+        const char *headingToString()
+        {
+            switch (m_heading)
+            {
+            case North:
+                return "North";
+            case East:
+                return "East";
+            case South:
+                return "South";
+            case West:
+                return "West";
+            default:
+                return "unknown";
+            }
+        }
+#endif
 
     private:
         int m_x, m_y;

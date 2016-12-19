@@ -1,3 +1,5 @@
+#define TEST_DEBUG
+
 #include <stdio.h>
 
 #include "../common/InputReader.hpp"
