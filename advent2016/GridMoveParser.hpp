@@ -1,34 +1,113 @@
+#include <stdio.h>
+#include <cmath>
+
 namespace Advent2016
 {
 	class GridMoveParser
 	{
+        typedef enum
+        {
+            North = 0,
+            East,
+            South,
+            West,
+            NumHeadings,
+        } Heading;
+
+        typedef enum
+        {
+            NotParsing = 0,
+            Parsing,
+        } ParseState;
+
     public:
         GridMoveParser() :
-            m_shortestPathDistance(0)
+            m_x(0),
+            m_y(0),
+            m_heading(North),
+            m_shortestPathDistance(0),
+            m_parseState(NotParsing)
         {
         }
 
         void parse(char *input)
         {
+            m_x = m_y = 0;
+            m_heading = North;
             m_shortestPathDistance = 0;
+            m_parseState = NotParsing;
 
-            for (char *p = input; *p; ++p)
+            char *numberToParse = nullptr;
+            for (char *p = input; ; ++p)
             {
-                if (*p == 'L')
+                auto willBreak = false;
+                if (0 == *p)
                 {
+                    willBreak = true;
                 }
-                else if (*p == 'R')
+                if (NotParsing == m_parseState)
                 {
+                    if ('L' == *p || 'R' == *p)
+                    {
+                        numberToParse = p + 1;
+                        if ('L' == *p) m_heading = static_cast<Heading>((m_heading - 1) % NumHeadings);
+                        if ('R' == *p) m_heading = static_cast<Heading>((m_heading + 1) % NumHeadings);
+                        m_parseState = Parsing;
+                    }
+                }
+                if (Parsing == m_parseState)
+                {
+                    if (',' == *p || 0 == *p)
+                    {
+                        *p = 0;
+                        int parsedNumber = -1;
+                        (void)sscanf(numberToParse, "%d", &parsedNumber);
+                        if (parsedNumber >= 0)
+                        {
+                            updatePosition(parsedNumber);
+                        }
+                        m_parseState = NotParsing;
+                    }
+                }
+                if (willBreak)
+                {
+                    break;
                 }
             }
         }
 
-        int getShortestPathDistance()
+        unsigned getShortestPathDistance()
         {
             return m_shortestPathDistance;
         }
 
     private:
-        int m_shortestPathDistance;
+        void updatePosition(int distance)
+        {
+            switch (m_heading)
+            {
+            case North:
+                m_y += distance;
+                break;
+            case East:
+                m_x += distance;
+                break;
+            case South:
+                m_y -= distance;
+                break;
+            case West:
+                m_x -= distance;
+                break;
+            default:
+                break;
+            }
+            m_shortestPathDistance = std::abs(m_x) + std::abs(m_y);
+        }
+
+    private:
+        int m_x, m_y;
+        Heading m_heading;
+        unsigned m_shortestPathDistance;
+        ParseState m_parseState;
     };
 }

@@ -1,6 +1,6 @@
 #include "stdafx.h"
-
 #include "CppUnitTest.h"
+
 #include "../advent2016/GridMoveParser.hpp"
 
 using namespace Microsoft::VisualStudio::CppUnitTestFramework;
@@ -15,7 +15,8 @@ namespace advent2016tests
 		TEST_METHOD(TestMethod1)
 		{
             GridMoveParser parser;
-            parser.parse("R2, L3");
+            char input[] = "R2, L3";
+            parser.parse(input);
             auto shortestPathDistance = parser.getShortestPathDistance();
             Assert::AreEqual((float)5, (float)shortestPathDistance, 0.f, L"First test input did not produce expected test output");
 		}
