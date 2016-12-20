@@ -31,11 +31,6 @@ namespace Advent2016
 
         void parse(char *input)
         {
-            m_x = m_y = 0;
-            m_heading = North;
-            m_shortestPathDistance = 0;
-            m_parseState = NotParsing;
-
             char *numberToParse = nullptr;
             for (char *p = input; ; ++p)
             {
