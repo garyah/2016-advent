@@ -29,5 +29,8 @@
     <ClCompile Include="GridMoveParserTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="KeypadMoveParserTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

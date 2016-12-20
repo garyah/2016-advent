@@ -1,8 +1,10 @@
 #include <stdio.h>
 
 #include "../common/InputReader.hpp"
+#include "../advent2016/KeypadMoveParser.hpp"
 
 using namespace Common;
+using namespace Advent2016;
 
 int main()
 {
