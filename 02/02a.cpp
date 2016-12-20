@@ -8,11 +8,12 @@ using namespace Advent2016;
 
 int main()
 {
-	char *line = NULL;
+    KeypadMoveParser parser;
+    char *line = NULL;
 	while ((line = InputReader::ReadLine()) != NULL)
 	{
-		// TODO: invoke class code here
-		(void)printf("%s\n", line);
-	}
-	return 0;
+        parser.parseInstruction(line);
+    }
+    (void)printf("%u\n", parser.getCode());
+    return 0;
 }
