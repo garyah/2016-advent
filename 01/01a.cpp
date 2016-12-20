@@ -1,4 +1,4 @@
-#define TEST_DEBUG
+#define xTEST_DEBUG
 
 #include <stdio.h>
 
