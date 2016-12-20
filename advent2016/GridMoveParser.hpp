@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <cmath>
+#include <map>
 
 namespace Advent2016
 {
@@ -19,14 +20,24 @@ namespace Advent2016
             Parsing,
         } ParseState;
 
+        typedef std::pair<int, int> Point;
+        typedef std::pair<Point, bool> PointEntry;
+        typedef std::map<Point, bool> PointMap;
+
     public:
         GridMoveParser() :
             m_x(0),
             m_y(0),
             m_heading(North),
             m_shortestPathDistance(0),
-            m_parseState(NotParsing)
+            m_parseState(NotParsing),
+            m_pointMap(),
+            m_distanceToFirstRevisit(0),
+            m_gotFirstRevisit(false)
         {
+            Point point(m_x, m_y);
+            PointEntry entry(point, true);
+            (void)m_pointMap.insert(entry);
         }
 
         void parse(char *input)
@@ -78,21 +89,74 @@ namespace Advent2016
             return m_shortestPathDistance;
         }
 
+        unsigned getDistanceToFirstRevisit()
+        {
+            return m_distanceToFirstRevisit;
+        }
+
     private:
         void updatePosition(int distance)
         {
             switch (m_heading)
             {
             case North:
+                for (int y = m_y + 1; y <= m_y + distance && !m_gotFirstRevisit; ++y)
+                {
+                    auto beforeSize = m_pointMap.size();
+                    Point point(m_x, y);
+                    PointEntry entry(point, true);
+                    (void)m_pointMap.insert(entry);
+                    if (beforeSize == m_pointMap.size())
+                    {
+                        m_distanceToFirstRevisit = std::abs(point.first) + std::abs(point.second);
+                        m_gotFirstRevisit = true;
+                    }
+                }
                 m_y += distance;
                 break;
             case East:
+                for (int x = m_x + 1; x <= m_x + distance && !m_gotFirstRevisit; ++x)
+                {
+                    auto beforeSize = m_pointMap.size();
+                    Point point(x, m_y);
+                    PointEntry entry(point, true);
+                    (void)m_pointMap.insert(entry);
+                    if (beforeSize == m_pointMap.size())
+                    {
+                        m_distanceToFirstRevisit = std::abs(point.first) + std::abs(point.second);
+                        m_gotFirstRevisit = true;
+                    }
+                }
                 m_x += distance;
                 break;
             case South:
+                for (int y = m_y - 1; y >= m_y - distance && !m_gotFirstRevisit; --y)
+                {
+                    auto beforeSize = m_pointMap.size();
+                    Point point(m_x, y);
+                    PointEntry entry(point, true);
+                    (void)m_pointMap.insert(entry);
+                    if (beforeSize == m_pointMap.size())
+                    {
+                        m_distanceToFirstRevisit = std::abs(point.first) + std::abs(point.second);
+                        m_gotFirstRevisit = true;
+                    }
+                }
                 m_y -= distance;
                 break;
             case West:
+                for (int x = m_x - 1; x >= m_x - distance && !m_gotFirstRevisit; --x)
+                {
+                    auto beforeSize = m_pointMap.size();
+                    Point point(x, m_y);
+                    PointEntry entry(point, true);
+                    (void)m_pointMap.insert(entry);
+                    if (beforeSize == m_pointMap.size())
+                    {
+                        m_distanceToFirstRevisit = std::abs(point.first) + std::abs(point.second);
+                        m_gotFirstRevisit = true;
+                    }
+                }
                 m_x -= distance;
                 break;
             default:
@@ -125,5 +189,8 @@ namespace Advent2016
         Heading m_heading;
         unsigned m_shortestPathDistance;
         ParseState m_parseState;
+        PointMap m_pointMap;
+        unsigned m_distanceToFirstRevisit;
+        bool m_gotFirstRevisit;
     };
 }

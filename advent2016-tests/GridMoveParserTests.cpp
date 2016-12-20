@@ -48,5 +48,14 @@ namespace advent2016tests
             Assert::AreEqual((float)7, (float)shortestPathDistance, 0.f);
         }
 
+        TEST_METHOD(TestMethod01b1)
+        {
+            GridMoveParser parser;
+            char input[] = "R8, R4, R4, R8";
+            parser.parse(input);
+            auto distanceToFirstRevisit = parser.getDistanceToFirstRevisit();
+            Assert::AreEqual((float)4, (float)distanceToFirstRevisit, 0.f);
+        }
+
     };
 }
