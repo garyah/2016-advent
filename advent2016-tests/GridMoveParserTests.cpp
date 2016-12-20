@@ -12,7 +12,7 @@ namespace advent2016tests
 	{
 	public:
 		
-		TEST_METHOD(TestMethod1)
+		TEST_METHOD(TestMethod01a1)
 		{
             GridMoveParser parser;
             char input[] = "R2, L3";
@@ -21,7 +21,7 @@ namespace advent2016tests
             Assert::AreEqual((float)5, (float)shortestPathDistance, 0.f);
 		}
 
-        TEST_METHOD(TestMethod2)
+        TEST_METHOD(TestMethod01a2)
         {
             GridMoveParser parser;
             char input[] = "R2, R2, R2";
@@ -30,7 +30,7 @@ namespace advent2016tests
             Assert::AreEqual((float)2, (float)shortestPathDistance, 0.f);
         }
 
-        TEST_METHOD(TestMethod3)
+        TEST_METHOD(TestMethod01a3)
         {
             GridMoveParser parser;
             char input[] = "R5, L5, R5, R3";
