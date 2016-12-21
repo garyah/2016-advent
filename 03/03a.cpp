@@ -8,11 +8,12 @@ using namespace Advent2016;
 
 int main()
 {
-	char *line = NULL;
+    TriangleValidator validator;
+    char *line = NULL;
 	while ((line = InputReader::ReadLine()) != NULL)
 	{
-		// TODO: invoke class code here
-		(void)printf("%s\n", line);
-	}
-	return 0;
+        validator.addTriangle(line);
+    }
+    (void)printf("%u\n", validator.getNumValid());
+    return 0;
 }
