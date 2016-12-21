@@ -1,17 +1,19 @@
 #include <stdio.h>
 
 #include "../common/InputReader.hpp"
+#include "../advent2016/RoomValidator.hpp"
 
 using namespace Common;
-//using namespace Advent2016;
+using namespace Advent2016;
 
 int main()
 {
-	char *line = NULL;
+    RoomValidator validator;
+    char *line = NULL;
 	while ((line = InputReader::ReadLine()) != NULL)
 	{
-		// TODO: invoke class code here
-		(void)printf("%s\n", line);
-	}
-	return 0;
+        validator.addRoom(line);
+    }
+    (void)printf("%u\n", validator.getSumOfIds());
+    return 0;
 }
