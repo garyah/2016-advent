@@ -8,12 +8,16 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{90091C3D-E1C9-4A6F-88FE-312A369D54D5}"
 	ProjectSection(SolutionItems) = preProject
 		common\InputReader.hpp = common\InputReader.hpp
+		common\md5.c = common\md5.c
+		common\md5.h = common\md5.h
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "advent2016", "advent2016", "{B1AFED1B-8EF2-4060-B719-23D1ADFAA713}"
 	ProjectSection(SolutionItems) = preProject
 		advent2016\GridMoveParser.hpp = advent2016\GridMoveParser.hpp
+		advent2016\HashInputGenerator.hpp = advent2016\HashInputGenerator.hpp
 		advent2016\KeypadMoveParser.hpp = advent2016\KeypadMoveParser.hpp
+		advent2016\PasswordGenerator.hpp = advent2016\PasswordGenerator.hpp
 		advent2016\RoomValidator.hpp = advent2016\RoomValidator.hpp
 		advent2016\TriangleValidator.hpp = advent2016\TriangleValidator.hpp
 	EndProjectSection

@@ -1,17 +1,19 @@
 #include <stdio.h>
 
 #include "../common/InputReader.hpp"
+#include "../advent2016/PasswordGenerator.hpp"
 
 using namespace Common;
-//using namespace Advent2016;
+using namespace Advent2016;
 
 int main()
 {
 	char *line = NULL;
 	while ((line = InputReader::ReadLine()) != NULL)
 	{
-		// TODO: invoke class code here
-		(void)printf("%s\n", line);
+        PasswordGenerator generator;
+        generator.generate(line);
+        (void)printf("%s\n", generator.getPassword());
 	}
 	return 0;
 }
