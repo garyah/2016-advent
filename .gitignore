@@ -37,6 +37,7 @@ tests_output_?.txt
 *Parser
 *Generator
 *Counter
+*Validator
 main
 
 site
