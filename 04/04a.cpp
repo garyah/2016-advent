@@ -3,6 +3,7 @@
 #include "../common/InputReader.hpp"
 
 using namespace Common;
+//using namespace Advent2016;
 
 int main()
 {
