@@ -18,6 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "advent2016", "advent2016", 
 		advent2016\HashInputGenerator.hpp = advent2016\HashInputGenerator.hpp
 		advent2016\KeypadMoveParser.hpp = advent2016\KeypadMoveParser.hpp
 		advent2016\PasswordGenerator.hpp = advent2016\PasswordGenerator.hpp
+		advent2016\PasswordScrambler.hpp = advent2016\PasswordScrambler.hpp
 		advent2016\RoomValidator.hpp = advent2016\RoomValidator.hpp
 		advent2016\TriangleValidator.hpp = advent2016\TriangleValidator.hpp
 	EndProjectSection
@@ -53,6 +54,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "05b", "05\05b.vcxproj", "{3AACD5E0-CA96-460C-B16E-9E98045B7C98}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "advent2016-tests", "advent2016-tests\advent2016-tests.vcxproj", "{40B987ED-C973-453C-A08D-C051901765A7}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "21a", "21\21a.vcxproj", "{6813B0A9-90D8-4646-8A33-6857A2A6EE8E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "21b", "21\21b.vcxproj", "{634717A1-C4FF-4702-AA7C-58BF4F98230D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -158,6 +163,22 @@ Global
 		{40B987ED-C973-453C-A08D-C051901765A7}.Release|x64.Build.0 = Release|x64
 		{40B987ED-C973-453C-A08D-C051901765A7}.Release|x86.ActiveCfg = Release|Win32
 		{40B987ED-C973-453C-A08D-C051901765A7}.Release|x86.Build.0 = Release|Win32
+		{6813B0A9-90D8-4646-8A33-6857A2A6EE8E}.Debug|x64.ActiveCfg = Debug|x64
+		{6813B0A9-90D8-4646-8A33-6857A2A6EE8E}.Debug|x64.Build.0 = Debug|x64
+		{6813B0A9-90D8-4646-8A33-6857A2A6EE8E}.Debug|x86.ActiveCfg = Debug|Win32
+		{6813B0A9-90D8-4646-8A33-6857A2A6EE8E}.Debug|x86.Build.0 = Debug|Win32
+		{6813B0A9-90D8-4646-8A33-6857A2A6EE8E}.Release|x64.ActiveCfg = Release|x64
+		{6813B0A9-90D8-4646-8A33-6857A2A6EE8E}.Release|x64.Build.0 = Release|x64
+		{6813B0A9-90D8-4646-8A33-6857A2A6EE8E}.Release|x86.ActiveCfg = Release|Win32
+		{6813B0A9-90D8-4646-8A33-6857A2A6EE8E}.Release|x86.Build.0 = Release|Win32
+		{634717A1-C4FF-4702-AA7C-58BF4F98230D}.Debug|x64.ActiveCfg = Debug|x64
+		{634717A1-C4FF-4702-AA7C-58BF4F98230D}.Debug|x64.Build.0 = Debug|x64
+		{634717A1-C4FF-4702-AA7C-58BF4F98230D}.Debug|x86.ActiveCfg = Debug|Win32
+		{634717A1-C4FF-4702-AA7C-58BF4F98230D}.Debug|x86.Build.0 = Debug|Win32
+		{634717A1-C4FF-4702-AA7C-58BF4F98230D}.Release|x64.ActiveCfg = Release|x64
+		{634717A1-C4FF-4702-AA7C-58BF4F98230D}.Release|x64.Build.0 = Release|x64
+		{634717A1-C4FF-4702-AA7C-58BF4F98230D}.Release|x86.ActiveCfg = Release|Win32
+		{634717A1-C4FF-4702-AA7C-58BF4F98230D}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -173,5 +194,7 @@ Global
 		{8BE6D713-0601-4695-B579-7DE5606D4131} = {D10AE141-88EB-41BB-8722-9EE0C83705B0}
 		{1FF2EA11-63DF-4E5C-9B93-62607849B6D1} = {D10AE141-88EB-41BB-8722-9EE0C83705B0}
 		{3AACD5E0-CA96-460C-B16E-9E98045B7C98} = {D10AE141-88EB-41BB-8722-9EE0C83705B0}
+		{6813B0A9-90D8-4646-8A33-6857A2A6EE8E} = {6EF6E453-B74A-47AF-9202-5D067226A091}
+		{634717A1-C4FF-4702-AA7C-58BF4F98230D} = {6EF6E453-B74A-47AF-9202-5D067226A091}
 	EndGlobalSection
 EndGlobal
