@@ -1,5 +1,4 @@
 #include <stdio.h>
-//#include <cmath>
 
 namespace Advent2016
 {

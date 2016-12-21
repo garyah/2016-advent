@@ -15,8 +15,7 @@ namespace advent2016tests
 		TEST_METHOD(TestMethod03a1)
 		{
             TriangleValidator validator;
-            char input[] = "5 10 25";
-            validator.addTriangle(input);
+            validator.addTriangle("5 10 25");
             auto numValid = validator.getNumValid();
             Assert::AreEqual((float)0, (float)numValid, 0.f);
 		}
@@ -24,8 +23,7 @@ namespace advent2016tests
         TEST_METHOD(OneValidReturnsOne)
         {
             TriangleValidator validator;
-            char input[] = "3 4 5";
-            validator.addTriangle(input);
+            validator.addTriangle("3 4 5");
             auto numValid = validator.getNumValid();
             Assert::AreEqual((float)1, (float)numValid, 0.f);
         }
