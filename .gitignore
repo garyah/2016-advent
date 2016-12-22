@@ -39,6 +39,7 @@ tests_output_?.txt
 *Counter
 *Validator
 *Scrambler
+*Corrector
 main
 
 site
