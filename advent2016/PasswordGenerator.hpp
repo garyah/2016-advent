@@ -12,6 +12,14 @@ namespace Advent2016
 
 		void generate(const char *doorId)
 		{
+            HashInputGenerator generator;
+            unsigned index = 0;
+            for (int i = 0; i < 8; ++i)
+            {
+                generator.generate(doorId, index);
+                index = generator.getHashInputDecimal() + 1;
+                m_password.append(1, *(generator.getHashOutputString() + 5));
+            }
 		}
 
 		const char *getPassword() const
