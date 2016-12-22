@@ -47,5 +47,8 @@
     <ClCompile Include="PasswordScramblerTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="ViableNodePairCounterTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

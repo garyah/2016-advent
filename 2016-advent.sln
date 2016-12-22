@@ -21,6 +21,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "advent2016", "advent2016", 
 		advent2016\PasswordScrambler.hpp = advent2016\PasswordScrambler.hpp
 		advent2016\RoomValidator.hpp = advent2016\RoomValidator.hpp
 		advent2016\TriangleValidator.hpp = advent2016\TriangleValidator.hpp
+		advent2016\ViableNodePairCounter.hpp = advent2016\ViableNodePairCounter.hpp
 	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "template", "template\template.vcxproj", "{8ACAF4E0-E496-4DEE-858B-CEB990EEDD84}"
@@ -58,6 +59,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "21a", "21\21a.vcxproj", "{6813B0A9-90D8-4646-8A33-6857A2A6EE8E}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "21b", "21\21b.vcxproj", "{634717A1-C4FF-4702-AA7C-58BF4F98230D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "22a", "22\22a.vcxproj", "{67073E08-B761-4B6F-A931-985D7CCABE25}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "22b", "22\22b.vcxproj", "{9FD36F3A-453C-45F1-8A61-C4435CA7EA35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -179,6 +184,22 @@ Global
 		{634717A1-C4FF-4702-AA7C-58BF4F98230D}.Release|x64.Build.0 = Release|x64
 		{634717A1-C4FF-4702-AA7C-58BF4F98230D}.Release|x86.ActiveCfg = Release|Win32
 		{634717A1-C4FF-4702-AA7C-58BF4F98230D}.Release|x86.Build.0 = Release|Win32
+		{67073E08-B761-4B6F-A931-985D7CCABE25}.Debug|x64.ActiveCfg = Debug|x64
+		{67073E08-B761-4B6F-A931-985D7CCABE25}.Debug|x64.Build.0 = Debug|x64
+		{67073E08-B761-4B6F-A931-985D7CCABE25}.Debug|x86.ActiveCfg = Debug|Win32
+		{67073E08-B761-4B6F-A931-985D7CCABE25}.Debug|x86.Build.0 = Debug|Win32
+		{67073E08-B761-4B6F-A931-985D7CCABE25}.Release|x64.ActiveCfg = Release|x64
+		{67073E08-B761-4B6F-A931-985D7CCABE25}.Release|x64.Build.0 = Release|x64
+		{67073E08-B761-4B6F-A931-985D7CCABE25}.Release|x86.ActiveCfg = Release|Win32
+		{67073E08-B761-4B6F-A931-985D7CCABE25}.Release|x86.Build.0 = Release|Win32
+		{9FD36F3A-453C-45F1-8A61-C4435CA7EA35}.Debug|x64.ActiveCfg = Debug|x64
+		{9FD36F3A-453C-45F1-8A61-C4435CA7EA35}.Debug|x64.Build.0 = Debug|x64
+		{9FD36F3A-453C-45F1-8A61-C4435CA7EA35}.Debug|x86.ActiveCfg = Debug|Win32
+		{9FD36F3A-453C-45F1-8A61-C4435CA7EA35}.Debug|x86.Build.0 = Debug|Win32
+		{9FD36F3A-453C-45F1-8A61-C4435CA7EA35}.Release|x64.ActiveCfg = Release|x64
+		{9FD36F3A-453C-45F1-8A61-C4435CA7EA35}.Release|x64.Build.0 = Release|x64
+		{9FD36F3A-453C-45F1-8A61-C4435CA7EA35}.Release|x86.ActiveCfg = Release|Win32
+		{9FD36F3A-453C-45F1-8A61-C4435CA7EA35}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -196,5 +217,7 @@ Global
 		{3AACD5E0-CA96-460C-B16E-9E98045B7C98} = {D10AE141-88EB-41BB-8722-9EE0C83705B0}
 		{6813B0A9-90D8-4646-8A33-6857A2A6EE8E} = {6EF6E453-B74A-47AF-9202-5D067226A091}
 		{634717A1-C4FF-4702-AA7C-58BF4F98230D} = {6EF6E453-B74A-47AF-9202-5D067226A091}
+		{67073E08-B761-4B6F-A931-985D7CCABE25} = {6EF6E453-B74A-47AF-9202-5D067226A091}
+		{9FD36F3A-453C-45F1-8A61-C4435CA7EA35} = {6EF6E453-B74A-47AF-9202-5D067226A091}
 	EndGlobalSection
 EndGlobal
