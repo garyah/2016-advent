@@ -39,5 +39,14 @@ namespace advent2016tests
             Assert::AreEqual((float)1, (float)counter.getNumViable(), 0.f);
         }
 
+        TEST_METHOD(TwoViable)
+        {
+            ViableNodePairCounter counter;
+            counter.addNode("/dev/grid/node-x0-y0     92T   68T    24T   73%");
+            counter.addNode("/dev/grid/node-x1-y0     92T   24T    68T   27%");
+            counter.countViable();
+            Assert::AreEqual((float)2, (float)counter.getNumViable(), 0.f);
+        }
+
     };
 }
