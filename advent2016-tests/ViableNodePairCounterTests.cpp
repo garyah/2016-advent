@@ -12,13 +12,32 @@ namespace advent2016tests
 	{
 	public:
 		
-		TEST_METHOD(TestMethod22a1)
-		{
+        TEST_METHOD(NoNodes)
+        {
+            ViableNodePairCounter counter;
+            counter.addNode("root@ebhq-gridcenter# df -h");
+            counter.addNode("Filesystem              Size  Used  Avail  Use%");
+            counter.countViable();
+            Assert::AreEqual((float)0, (float)counter.getNumViable(), 0.f);
+        }
+
+        TEST_METHOD(NoViable)
+        {
             ViableNodePairCounter counter;
             counter.addNode("/dev/grid/node-x0-y0     92T   68T    24T   73%");
+            counter.addNode("/dev/grid/node-x1-y0     92T   68T    24T   73%");
             counter.countViable();
-            Assert::AreEqual((float)10, (float)counter.getNumViable(), 0.f);
-		}
+            Assert::AreEqual((float)0, (float)counter.getNumViable(), 0.f);
+        }
+
+        TEST_METHOD(OneViable)
+        {
+            ViableNodePairCounter counter;
+            counter.addNode("/dev/grid/node-x0-y0     92T   68T    24T   73%");
+            counter.addNode("/dev/grid/node-x1-y0     92T   24T    68T   27%");
+            counter.countViable();
+            Assert::AreEqual((float)1, (float)counter.getNumViable(), 0.f);
+        }
 
     };
 }

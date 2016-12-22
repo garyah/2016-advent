@@ -1,15 +1,19 @@
+#include <string>
+
 namespace Advent2016
 {
 	class ViableNodePairCounter
 	{
     public:
         ViableNodePairCounter() :
-            m_numViable(0)
+            m_numViable(-1)
         {
         }
 
-        void addNode(char *input)
+        void addNode(const char *input)
         {
+            std::string inputStr(input);
+            if (inputStr.find("/dev/grid/") == std::string::npos) return;
         }
 
         void countViable()
