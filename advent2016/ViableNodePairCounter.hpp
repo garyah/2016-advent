@@ -19,7 +19,7 @@ namespace Advent2016
     public:
         ViableNodePairCounter() :
             m_grid(),
-            m_numViable(-1)
+            m_numViable(0)
         {
         }
 
@@ -37,7 +37,7 @@ namespace Advent2016
                 //(void)printf("row=%zu,col=%zu,%u,%u,%u,%u\n", rowIndex, colIndex, node.size, node.used, node.avail, node.usedPercent);
 
                 while (colIndex >= m_grid.size()) { m_grid.push_back(Row()); }
-                auto row = m_grid[colIndex];
+                auto& row = m_grid[colIndex];
                 while (rowIndex >= row.size()) { row.push_back(Node()); }
                 row[rowIndex] = node;
             }
@@ -45,11 +45,20 @@ namespace Advent2016
 
         void countViable()
         {
+            // Ack!  O(N^2) algo to count viable
             for (const auto& row : m_grid)
             {
                 for (const auto& node : row)
                 {
                     if (0 == node.used) continue;
+                    for (const auto& otherRow : m_grid)
+                    {
+                        for (const auto& otherNode : otherRow)
+                        {
+                            if (&node == &otherNode) continue;
+                            if (otherNode.avail >= node.used) ++m_numViable;
+                        }
+                    }
                 }
             }
         }
