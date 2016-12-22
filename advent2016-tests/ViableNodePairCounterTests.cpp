@@ -25,7 +25,7 @@ namespace advent2016tests
         {
             ViableNodePairCounter counter;
             counter.addNode("/dev/grid/node-x0-y0     92T   68T    24T   73%");
-            counter.addNode("/dev/grid/node-x1-y0     92T   68T    24T   73%");
+            counter.addNode("/dev/grid/node-x1-y0     24T   0T     24T   0%");
             counter.countViable();
             Assert::AreEqual((float)0, (float)counter.getNumViable(), 0.f);
         }
@@ -34,7 +34,7 @@ namespace advent2016tests
         {
             ViableNodePairCounter counter;
             counter.addNode("/dev/grid/node-x0-y0     92T   68T    24T   73%");
-            counter.addNode("/dev/grid/node-x1-y0     92T   24T    68T   27%");
+            counter.addNode("/dev/grid/node-x1-y0     93T   25T    68T   27%");
             counter.countViable();
             Assert::AreEqual((float)1, (float)counter.getNumViable(), 0.f);
         }
