@@ -1,16 +1,20 @@
 #include <stdio.h>
 
 #include "../common/InputReader.hpp"
+#include "../advent2016/ErrorCorrector.hpp"
 
 using namespace Common;
+using namespace Advent2016;
 
 int main()
 {
-	char *line = NULL;
+    ErrorCorrector corrector;
+    char *line = NULL;
 	while ((line = InputReader::ReadLine()) != NULL)
 	{
-		// TODO: invoke class code here
-		(void)printf("%s\n", line);
-	}
-	return 0;
+        corrector.addMessage(line);
+    }
+    corrector.doReverseCorrection();
+    (void)printf("%s\n", corrector.getCorrected());
+    return 0;
 }

@@ -12,8 +12,8 @@ namespace advent2016tests
 	{
 	public:
 		
-		TEST_METHOD(TestMethod06a1)
-		{
+        TEST_METHOD(TestMethod06a1)
+        {
             ErrorCorrector corrector;
             corrector.addMessage("eedadn");
             corrector.addMessage("drvtee");
@@ -31,9 +31,32 @@ namespace advent2016tests
             corrector.addMessage("vrdear");
             corrector.addMessage("dvrsen");
             corrector.addMessage("enarar");
-            corrector.doCorrection();
+            corrector.doForwardCorrection();
             Assert::AreEqual("easter", corrector.getCorrected(), 0.f);
-		}
+        }
+
+        TEST_METHOD(TestMethod06b1)
+        {
+            ErrorCorrector corrector;
+            corrector.addMessage("eedadn");
+            corrector.addMessage("drvtee");
+            corrector.addMessage("eandsr");
+            corrector.addMessage("raavrd");
+            corrector.addMessage("atevrs");
+            corrector.addMessage("tsrnev");
+            corrector.addMessage("sdttsa");
+            corrector.addMessage("rasrtv");
+            corrector.addMessage("nssdts");
+            corrector.addMessage("ntnada");
+            corrector.addMessage("svetve");
+            corrector.addMessage("tesnvt");
+            corrector.addMessage("vntsnd");
+            corrector.addMessage("vrdear");
+            corrector.addMessage("dvrsen");
+            corrector.addMessage("enarar");
+            corrector.doReverseCorrection();
+            Assert::AreEqual("advent", corrector.getCorrected(), 0.f);
+        }
 
     };
 }

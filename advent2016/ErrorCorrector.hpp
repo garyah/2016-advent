@@ -30,7 +30,7 @@ namespace Advent2016
             }
         }
 
-        void doCorrection()
+        void doForwardCorrection()
         {
             for (const auto& countMap : m_countMaps)
             {
@@ -40,6 +40,19 @@ namespace Advent2016
                     letterMap[pair.second] = pair.first;
                 }
                 m_corrected.append(1, letterMap.rbegin()->second);
+            }
+        }
+
+        void doReverseCorrection()
+        {
+            for (const auto& countMap : m_countMaps)
+            {
+                LetterMap letterMap;
+                for (const auto& pair : countMap)
+                {
+                    letterMap[pair.second] = pair.first;
+                }
+                m_corrected.append(1, letterMap.begin()->second);
             }
         }
 

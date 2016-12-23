@@ -14,7 +14,7 @@ int main()
 	{
         corrector.addMessage(line);
 	}
-    corrector.doCorrection();
+    corrector.doForwardCorrection();
     (void)printf("%s\n", corrector.getCorrected());
     return 0;
 }
