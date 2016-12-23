@@ -31,6 +31,7 @@ namespace advent2016tests
             corrector.addMessage("vrdear");
             corrector.addMessage("dvrsen");
             corrector.addMessage("enarar");
+            corrector.doCorrection();
             Assert::AreEqual("easter", corrector.getCorrected(), 0.f);
 		}
 
