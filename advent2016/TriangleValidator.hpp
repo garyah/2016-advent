@@ -6,11 +6,11 @@ namespace Advent2016
 	{
     public:
         TriangleValidator() :
-            m_numValid(0)
+            m_numValidByRows(0)
         {
         }
 
-        void addTriangle(char *input)
+        void addRow(char *input)
         {
             int side1 = -1, side2 = -1, side3 = -1;
             (void)sscanf(input, "%d %d %d", &side1, &side2, &side3);
@@ -20,19 +20,19 @@ namespace Advent2016
                     && side1 + side3 > side2
                     && side2 + side3 > side1)
                 {
-                    ++m_numValid;
+                    ++m_numValidByRows;
                 }
             }
         }
 
-        unsigned getNumValid()
+        unsigned getNumValidByRows()
         {
-            return m_numValid;
+            return m_numValidByRows;
         }
 
     private:
 
     private:
-        unsigned m_numValid;
+        unsigned m_numValidByRows;
     };
 }

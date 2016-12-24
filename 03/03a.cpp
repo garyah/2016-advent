@@ -12,8 +12,8 @@ int main()
     char *line = NULL;
 	while ((line = InputReader::ReadLine()) != NULL)
 	{
-        validator.addTriangle(line);
+        validator.addRow(line);
     }
-    (void)printf("%u\n", validator.getNumValid());
+    (void)printf("%u\n", validator.getNumValidByRows());
     return 0;
 }
