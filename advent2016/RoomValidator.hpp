@@ -28,9 +28,15 @@ namespace Advent2016
                 auto result = calculateChecksum(name);
                 if (0 == result.compare(checksum))
                 {
+                    if (name[strlen(name) - 1] == '-') name[strlen(name) - 1] = 0;
                     m_sumOfIds += static_cast<unsigned>(id);
                     m_lastId = id;
                     m_lastDecryptedName = decryptName(name, id);
+                }
+                else
+                {
+                    m_lastId = 0;
+                    m_lastDecryptedName = std::string();
                 }
             }
         }
@@ -83,6 +89,11 @@ namespace Advent2016
                     {
                         nextLetter = (nextLetter - 'a' + 1) % 26 + 'a';
                     }
+                }
+                else
+                {
+                    // make everything else (not just dash) a space
+                    nextLetter = ' ';
                 }
                 result += nextLetter;
             }

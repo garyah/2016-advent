@@ -25,7 +25,7 @@ namespace advent2016tests
         TEST_METHOD(TestMethod04b1)
         {
             RoomValidator validator;
-            validator.addRoom("qzmt-zixmtkozy-ivhz-343");
+            validator.addRoom("qzmt-zixmtkozy-ivhz-343[zimth]");
             Assert::AreEqual("very encrypted name", validator.getLastDecryptedName());
         }
 
