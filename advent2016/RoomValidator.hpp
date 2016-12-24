@@ -11,22 +11,26 @@ namespace Advent2016
 
     public:
         RoomValidator() :
-            m_sumOfIds(0)
+            m_sumOfIds(0),
+            m_lastId(0),
+            m_lastDecryptedName()
         {
         }
 
         void addRoom(char *input)
         {
-            char roomName[1000] = { 0 };
+            char name[1000] = { 0 };
             int id = -1;
-            char roomChecksum[1000] = { 0 };
-            (void)sscanf(input, "%999[-abcdefghijklmnopqrstuvwxyz]%u[%999[abcdefghijklmnopqrstuvwxyz]]", roomName, &id, roomChecksum);
+            char checksum[1000] = { 0 };
+            (void)sscanf(input, "%999[-abcdefghijklmnopqrstuvwxyz]%u[%999[abcdefghijklmnopqrstuvwxyz]]", name, &id, checksum);
             if (id >= 0)
             {
-                auto result = calculateChecksum(roomName);
-                if (0 == result.compare(roomChecksum))
+                auto result = calculateChecksum(name);
+                if (0 == result.compare(checksum))
                 {
                     m_sumOfIds += static_cast<unsigned>(id);
+                    m_lastId = id;
+                    m_lastDecryptedName = decryptName(name, id);
                 }
             }
         }
@@ -34,6 +38,16 @@ namespace Advent2016
         unsigned getSumOfIds()
         {
             return m_sumOfIds;
+        }
+
+        unsigned getLastId()
+        {
+            return m_lastId;
+        }
+
+        const char *getLastDecryptedName()
+        {
+            return m_lastDecryptedName.c_str();
         }
 
     private:
@@ -57,7 +71,27 @@ namespace Advent2016
             return result.substr(0, 5);
         }
 
+        std::string decryptName(const char *roomName, unsigned roomId)
+        {
+            std::string result;
+            for (const char *p = roomName; *p; ++p)
+            {
+                char nextLetter = *p;
+                if (islower(nextLetter))
+                {
+                    for (unsigned i = 0; i < roomId; ++i)
+                    {
+                        nextLetter = (nextLetter - 'a' + 1) % 26 + 'a';
+                    }
+                }
+                result += nextLetter;
+            }
+            return result;
+        }
+
     private:
         unsigned m_sumOfIds;
+        unsigned m_lastId;
+        std::string m_lastDecryptedName;
     };
 }
