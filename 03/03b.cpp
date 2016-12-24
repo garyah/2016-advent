@@ -14,6 +14,6 @@ int main()
     {
         validator.addRow(line);
     }
-    (void)printf("%u\n", validator.getNumValidByRows());
+    (void)printf("%u\n", validator.getNumValidByColumns());
     return 0;
 }
