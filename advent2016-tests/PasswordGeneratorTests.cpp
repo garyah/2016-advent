@@ -20,5 +20,13 @@ namespace advent2016tests
             //Assert::AreEqual("18f47a30", generator.getPassword());
 		}
 
+        TEST_METHOD(TestMethod05b1)
+        {
+            PasswordGenerator generator;
+            // this unit test takes too long to run, at present!
+            generator.generateByPosition("abc");
+            Assert::AreEqual("05ace8e3", generator.getPassword());
+        }
+
     };
 }
