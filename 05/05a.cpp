@@ -12,7 +12,7 @@ int main()
 	while ((line = InputReader::ReadLine()) != NULL)
 	{
         PasswordGenerator generator;
-        generator.generate(line);
+        generator.generateInOrder(line);
         (void)printf("%s\n", generator.getPassword());
 	}
 	return 0;

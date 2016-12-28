@@ -10,7 +10,7 @@ namespace Advent2016
 		{
 		}
 
-		void generate(const char *doorId)
+		void generateInOrder(const char *doorId)
 		{
             HashInputGenerator generator;
             unsigned index = 0;

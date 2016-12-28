@@ -16,7 +16,7 @@ namespace advent2016tests
 		{
             PasswordGenerator generator;
             // this unit test takes too long to run, at present!
-            //generator.generate("abc");
+            //generator.generateInOrder("abc");
             //Assert::AreEqual("18f47a30", generator.getPassword());
 		}
 
