@@ -2,16 +2,16 @@
 
 namespace Advent2016
 {
-	class PasswordGenerator
-	{
-	public:
+    class PasswordGenerator
+    {
+    public:
         PasswordGenerator() :
             m_password()
-		{
-		}
+        {
+        }
 
-		void generateInOrder(const char *doorId)
-		{
+        void generateInOrder(const char *doorId)
+        {
             HashInputGenerator generator;
             unsigned index = 0;
             for (int i = 0; i < 8; ++i)
@@ -20,7 +20,7 @@ namespace Advent2016
                 index = generator.getHashInputDecimal() + 1;
                 m_password.append(1, *(generator.getHashOutputString() + 5));
             }
-		}
+        }
 
         void generateByPosition(const char *doorId)
         {
@@ -34,14 +34,14 @@ namespace Advent2016
             //}
         }
 
-		const char *getPassword() const
-		{
-			return m_password.c_str();
-		}
+        const char *getPassword() const
+        {
+            return m_password.c_str();
+        }
 
-	private:
+    private:
 
-	private:
-		std::string m_password;
-	};
+    private:
+        std::string m_password;
+    };
 }

@@ -8,17 +8,17 @@ using namespace Advent2016;
 
 namespace advent2016tests
 {		
-	TEST_CLASS(PasswordGeneratorTests)
-	{
-	public:
-		
-		TEST_METHOD(TestMethod05a1)
-		{
+    TEST_CLASS(PasswordGeneratorTests)
+    {
+    public:
+        
+        TEST_METHOD(TestMethod05a1)
+        {
             PasswordGenerator generator;
             // this unit test takes too long to run, at present!
             //generator.generateInOrder("abc");
             //Assert::AreEqual("18f47a30", generator.getPassword());
-		}
+        }
 
         TEST_METHOD(TestMethod05b1)
         {
