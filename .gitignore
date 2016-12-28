@@ -47,6 +47,7 @@ others
 
 # Project intermediate files
 *.sdf
+*.VC.db
 
 Debug
 Release
