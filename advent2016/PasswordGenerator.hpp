@@ -32,7 +32,7 @@ namespace Advent2016
                 generator.generate(doorId, hash);
                 hash = generator.getHashInputDecimal() + 1;
                 size_t position = *(generator.getHashOutputString() + 5) - '0';
-                if (position < 8 && m_password[position] != ' ')
+                if (position < 8 && m_password[position] == ' ')
                 {
                     m_password[position] = *(generator.getHashOutputString() + 6);
                     ++count;
