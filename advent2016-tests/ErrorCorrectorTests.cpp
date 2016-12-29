@@ -32,7 +32,7 @@ namespace advent2016tests
             corrector.addMessage("dvrsen");
             corrector.addMessage("enarar");
             corrector.doForwardCorrection();
-            Assert::AreEqual("easter", corrector.getCorrected(), 0.f);
+            Assert::AreEqual("easter", corrector.getCorrected());
         }
 
         TEST_METHOD(TestMethod06b1)
@@ -55,7 +55,7 @@ namespace advent2016tests
             corrector.addMessage("dvrsen");
             corrector.addMessage("enarar");
             corrector.doReverseCorrection();
-            Assert::AreEqual("advent", corrector.getCorrected(), 0.f);
+            Assert::AreEqual("advent", corrector.getCorrected());
         }
 
     };
