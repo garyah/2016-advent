@@ -12,7 +12,7 @@ int main()
     while ((line = InputReader::ReadLine()) != NULL)
     {
         ChecksumGenerator generator;
-        generator.expandAndGenerate(line);
+        generator.expandAndGenerate(line, 272);
         (void)printf("%s\n", generator.getChecksum());
     }
     return 0;

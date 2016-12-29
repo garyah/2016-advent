@@ -57,7 +57,7 @@ namespace Advent2016
         {
         }
 
-        void expandAndGenerate(const char *startData, size_t targetLength = 272)
+        void expandAndGenerate(const char *startData, size_t targetLength)
         {
             m_checksum = generate(expand(startData, targetLength).c_str());
         }
