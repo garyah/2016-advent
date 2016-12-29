@@ -56,5 +56,8 @@
     <ClCompile Include="ChecksumGeneratorTests.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GoodIPFinderTests.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

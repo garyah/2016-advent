@@ -1,20 +1,19 @@
 #include <stdio.h>
 
 #include "../common/InputReader.hpp"
-#include "../advent2016/ViableNodePairCounter.hpp"
+#include "../advent2016/GoodIPFinder.hpp"
 
 using namespace Common;
 using namespace Advent2016;
 
 int main()
 {
-    ViableNodePairCounter counter;
+    GoodIPFinder finder;
     char *line = NULL;
     while ((line = InputReader::ReadLine()) != NULL)
     {
-        counter.addNode(line);
+        finder.addBlacklistRule(line);
     }
-    counter.countViable();
-    (void)printf("%u\n", counter.getNumViable());
+    (void)printf("%u\n", finder.getFirstGoodIP());
     return 0;
 }

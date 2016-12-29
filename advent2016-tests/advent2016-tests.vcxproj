@@ -166,6 +166,7 @@
     </ClCompile>
     <ClCompile Include="ChecksumGeneratorTests.cpp" />
     <ClCompile Include="ErrorCorrectorTests.cpp" />
+    <ClCompile Include="GoodIPFinderTests.cpp" />
     <ClCompile Include="KeypadMoveParserTests.cpp" />
     <ClCompile Include="PasswordGeneratorTests.cpp" />
     <ClCompile Include="PasswordScramblerTests.cpp" />
