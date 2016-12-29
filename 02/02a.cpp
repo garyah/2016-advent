@@ -10,9 +10,9 @@ int main()
 {
     KeypadMoveParser parser;
     char *line = NULL;
-	while ((line = InputReader::ReadLine()) != NULL)
-	{
-        parser.parseInstruction(line);
+    while ((line = InputReader::ReadLine()) != NULL)
+    {
+        parser.parseInstructionFor3x3(line);
     }
     (void)printf("%u\n", parser.getCode());
     return 0;
