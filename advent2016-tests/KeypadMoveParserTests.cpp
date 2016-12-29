@@ -29,7 +29,7 @@ namespace advent2016tests
             parser.parseInstructionForDiamond("RRDDD");
             parser.parseInstructionForDiamond("LURDL");
             parser.parseInstructionForDiamond("UUUUD");
-            Assert::AreEqual("", parser.getCode(), 0.f);
+            Assert::AreEqual("5DB3", parser.getCode(), 0.f);
         }
 
     };
