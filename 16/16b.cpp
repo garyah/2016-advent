@@ -12,6 +12,7 @@ int main()
     while ((line = InputReader::ReadLine()) != NULL)
     {
         ChecksumGenerator generator;
+        // this program seems to take forever to finish!
         generator.expandAndGenerate(line, 35651584);
         (void)printf("%s\n", generator.getChecksum());
     }
