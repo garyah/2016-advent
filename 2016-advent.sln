@@ -14,6 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "common", "common", "{90091C
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "advent2016", "advent2016", "{B1AFED1B-8EF2-4060-B719-23D1ADFAA713}"
 	ProjectSection(SolutionItems) = preProject
+		advent2016\ChecksumGenerator.hpp = advent2016\ChecksumGenerator.hpp
 		advent2016\ErrorCorrector.hpp = advent2016\ErrorCorrector.hpp
 		advent2016\GridMoveParser.hpp = advent2016\GridMoveParser.hpp
 		advent2016\HashInputGenerator.hpp = advent2016\HashInputGenerator.hpp

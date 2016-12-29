@@ -1,20 +1,19 @@
 #include <stdio.h>
 
 #include "../common/InputReader.hpp"
-#include "../advent2016/ViableNodePairCounter.hpp"
+#include "../advent2016/ChecksumGenerator.hpp"
 
 using namespace Common;
 using namespace Advent2016;
 
 int main()
 {
-    ViableNodePairCounter counter;
     char *line = NULL;
-	while ((line = InputReader::ReadLine()) != NULL)
-	{
-        counter.addNode(line);
-	}
-    counter.countViable();
-    (void)printf("%u\n", counter.getNumViable());
+    while ((line = InputReader::ReadLine()) != NULL)
+    {
+        ChecksumGenerator generator;
+        generator.generate(line);
+        (void)printf("%s\n", generator.getChecksum());
+    }
     return 0;
 }
