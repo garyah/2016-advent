@@ -29,7 +29,26 @@ namespace Advent2016
 
         static std::string generate(const char *data)
         {
-            std::string result;
+            std::string result(data);
+            if (result.length() & 1) return result;
+            while (!(result.length() & 1))
+            {
+                std::string temp;
+                for (size_t i = 0; i < result.length(); i += 2)
+                {
+                    if (result.substr(i, 2).compare("00") == 0
+                        || result.substr(i, 2).compare("11") == 0)
+                    {
+                        temp.append("1");
+                    }
+                    if (result.substr(i, 2).compare("01") == 0
+                        || result.substr(i, 2).compare("10") == 0)
+                    {
+                        temp.append("0");
+                    }
+                }
+                result = temp;
+            }
             return result;
         }
 
