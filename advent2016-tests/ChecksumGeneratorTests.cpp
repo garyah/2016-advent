@@ -42,5 +42,11 @@ namespace advent2016tests
             Assert::AreEqual("100", result.c_str());
         }
 
+        TEST_METHOD(GenerateFromOddStringCorrect)
+        {
+            auto result = ChecksumGenerator::generate("11001011010");
+            Assert::AreEqual("11001011010", result.c_str());
+        }
+
     };
 }
