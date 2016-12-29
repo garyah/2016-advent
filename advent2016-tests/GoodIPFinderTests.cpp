@@ -21,5 +21,27 @@ namespace advent2016tests
             Assert::AreEqual((float)3, (float)finder.getFirstGoodIP(), 0.f);
         }
 
+        TEST_METHOD(GapAtStart)
+        {
+            GoodIPFinder finder;
+            finder.addBlacklistRule("5-4294967295");
+            Assert::AreEqual((float)3, (float)finder.getFirstGoodIP(), 0.f);
+        }
+
+        TEST_METHOD(GapMiddle)
+        {
+            GoodIPFinder finder;
+            finder.addBlacklistRule("0-4");
+            finder.addBlacklistRule("4294967291-4294967295");
+            Assert::AreEqual((float)3, (float)finder.getFirstGoodIP(), 0.f);
+        }
+
+        TEST_METHOD(GapAtEnd)
+        {
+            GoodIPFinder finder;
+            finder.addBlacklistRule("0-4294967290");
+            Assert::AreEqual((float)3, (float)finder.getFirstGoodIP(), 0.f);
+        }
+
     };
 }
