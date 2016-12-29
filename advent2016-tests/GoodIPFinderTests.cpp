@@ -55,5 +55,15 @@ namespace advent2016tests
             Assert::AreEqual((float)0, (float)finder.getFirstGoodIP(), 0.f);
         }
 
+        TEST_METHOD(GapFollowingOneRangeInsideAnother)
+        {
+            GoodIPFinder finder;
+            finder.addBlacklistRule("0-9");
+            finder.addBlacklistRule("2-8");
+            finder.addBlacklistRule("20-4294967295");
+            finder.findFirstGoodIP();
+            Assert::AreEqual((float)10, (float)finder.getFirstGoodIP(), 0.f);
+        }
+
     };
 }

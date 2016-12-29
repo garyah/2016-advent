@@ -1,3 +1,5 @@
+#define DEBUG_TEST
+
 #include <stdio.h>
 #include <map>
 
@@ -23,6 +25,13 @@ namespace Advent2016
 
         void findFirstGoodIP()
         {
+#ifdef DEBUG_TEST
+            for (auto range : m_rangeMap)
+            {
+                (void)printf("%u-%u\n", range.first, range.second);
+            }
+#endif // DEBUG_TEST
+
             m_firstGoodIP = 0;
             auto rangeIter = m_rangeMap.begin();
             if (rangeIter->first)
@@ -30,26 +39,24 @@ namespace Advent2016
                 // gap at start includes first good
                 return;
             }
-            auto end = rangeIter->second;
-            auto maxEnd = end;
-            for (++rangeIter; end < UINT32_MAX && rangeIter != m_rangeMap.end(); ++rangeIter)
+            auto maxEnd = rangeIter->second;
+            for (++rangeIter; maxEnd < UINT32_MAX && rangeIter != m_rangeMap.end(); ++rangeIter)
             {
-                if (rangeIter->first > end + 1)
+                if (rangeIter->first > maxEnd + 1)
                 {
                     // gap in middle includes first good
-                    m_firstGoodIP = end + 1;
+                    m_firstGoodIP = maxEnd + 1;
                     return;
                 }
-                end = rangeIter->second;
-                if (end > maxEnd) { maxEnd = end; }
+                if (rangeIter->second > maxEnd) { maxEnd = rangeIter->second; }
             }
-            if (end >= UINT32_MAX)
+            if (maxEnd >= UINT32_MAX)
             {
                 // no gaps!  shouldn't happen, but it could
                 return;
             }
             // gap at end includes first good
-            m_firstGoodIP = end + 1;
+            m_firstGoodIP = maxEnd + 1;
         }
 
         unsigned getFirstGoodIP()
