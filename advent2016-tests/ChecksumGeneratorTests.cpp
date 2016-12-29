@@ -48,5 +48,12 @@ namespace advent2016tests
             Assert::AreEqual("11001011010", result.c_str());
         }
 
+        TEST_METHOD(TestMethod16a1)
+        {
+            ChecksumGenerator generator;
+            generator.expandAndGenerate("10000", 20);
+            Assert::AreEqual("01100", generator.getChecksum());
+        }
+
     };
 }
