@@ -4,8 +4,8 @@
 
 namespace Advent2016
 {
-	class RoomValidator
-	{
+    class RoomValidator
+    {
         typedef std::map<char, unsigned> CountMap;
         typedef std::map<unsigned, std::string> LettersMap;
 
