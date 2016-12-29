@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <algorithm>
+#include <string>
 
 namespace Advent2016
 {
@@ -9,7 +10,7 @@ namespace Advent2016
         KeypadMoveParser() :
             m_x(0),
             m_y(0),
-            m_code(0)
+            m_code()
         {
         }
 
@@ -37,60 +38,58 @@ namespace Advent2016
             updateCodeForDiamond();
         }
 
-        unsigned getCode()
+        const char *getCode()
         {
-            return m_code;
+            return m_code.c_str();
         }
 
     private:
         void updateCodeFor3x3()
         {
-            m_code *= 10;
             if (-1 == m_x)
             {
-                if (1 == m_y) m_code += 1;
-                if (0 == m_y) m_code += 4;
-                if (-1 == m_y) m_code += 7;
+                if (1 == m_y) m_code.append("1");// += 1;
+                if (0 == m_y) m_code.append("4");// += 4;
+                if (-1 == m_y) m_code.append("7");// += 7;
             }
             if (0 == m_x)
             {
-                if (1 == m_y) m_code += 2;
-                if (0 == m_y) m_code += 5;
-                if (-1 == m_y) m_code += 8;
+                if (1 == m_y) m_code.append("2");// += 2;
+                if (0 == m_y) m_code.append("5");// += 5;
+                if (-1 == m_y) m_code.append("8");// += 8;
             }
             if (1 == m_x)
             {
-                if (1 == m_y) m_code += 3;
-                if (0 == m_y) m_code += 6;
-                if (-1 == m_y) m_code += 9;
+                if (1 == m_y) m_code.append("3");// += 3;
+                if (0 == m_y) m_code.append("6");// += 6;
+                if (-1 == m_y) m_code.append("9");// += 9;
             }
         }
 
         void updateCodeForDiamond()
         {
-            m_code *= 10;
             if (-1 == m_x)
             {
-                if (1 == m_y) m_code += 1;
-                if (0 == m_y) m_code += 4;
-                if (-1 == m_y) m_code += 7;
+                if (1 == m_y) m_code.append("1");// += 1;
+                if (0 == m_y) m_code.append("4");// += 4;
+                if (-1 == m_y) m_code.append("7");// += 7;
             }
             if (0 == m_x)
             {
-                if (1 == m_y) m_code += 2;
-                if (0 == m_y) m_code += 5;
-                if (-1 == m_y) m_code += 8;
+                if (1 == m_y) m_code.append("2");// += 2;
+                if (0 == m_y) m_code.append("5");// += 5;
+                if (-1 == m_y) m_code.append("8");// += 8;
             }
             if (1 == m_x)
             {
-                if (1 == m_y) m_code += 3;
-                if (0 == m_y) m_code += 6;
-                if (-1 == m_y) m_code += 9;
+                if (1 == m_y) m_code.append("3");// += 3;
+                if (0 == m_y) m_code.append("6");// += 6;
+                if (-1 == m_y) m_code.append("9");// += 9;
             }
         }
 
     private:
         int m_x, m_y;
-        unsigned m_code;
+        std::string m_code;
     };
 }

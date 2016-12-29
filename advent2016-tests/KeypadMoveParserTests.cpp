@@ -19,7 +19,7 @@ namespace advent2016tests
             parser.parseInstructionFor3x3("RRDDD");
             parser.parseInstructionFor3x3("LURDL");
             parser.parseInstructionFor3x3("UUUUD");
-            Assert::AreEqual((float)1985, (float)parser.getCode(), 0.f);
+            Assert::AreEqual("1985", parser.getCode(), 0.f);
         }
 
         TEST_METHOD(TestMethod02b1)
@@ -29,7 +29,7 @@ namespace advent2016tests
             parser.parseInstructionForDiamond("RRDDD");
             parser.parseInstructionForDiamond("LURDL");
             parser.parseInstructionForDiamond("UUUUD");
-            Assert::AreEqual((float)0, (float)parser.getCode(), 0.f);
+            Assert::AreEqual("", parser.getCode(), 0.f);
         }
 
     };

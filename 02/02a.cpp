@@ -14,6 +14,6 @@ int main()
     {
         parser.parseInstructionFor3x3(line);
     }
-    (void)printf("%u\n", parser.getCode());
+    (void)printf("%s\n", parser.getCode());
     return 0;
 }
