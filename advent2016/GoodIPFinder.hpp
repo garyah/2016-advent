@@ -1,4 +1,4 @@
-#define DEBUG_TEST
+#define xDEBUG_TEST
 
 #include <stdio.h>
 #include <map>
