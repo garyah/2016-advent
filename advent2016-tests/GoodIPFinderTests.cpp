@@ -18,6 +18,7 @@ namespace advent2016tests
             finder.addBlacklistRule("5-8");
             finder.addBlacklistRule("0-2");
             finder.addBlacklistRule("4-7");
+            finder.findFirstGoodIP();
             Assert::AreEqual((float)3, (float)finder.getFirstGoodIP(), 0.f);
         }
 
@@ -25,7 +26,8 @@ namespace advent2016tests
         {
             GoodIPFinder finder;
             finder.addBlacklistRule("5-4294967295");
-            Assert::AreEqual((float)3, (float)finder.getFirstGoodIP(), 0.f);
+            finder.findFirstGoodIP();
+            Assert::AreEqual((float)0, (float)finder.getFirstGoodIP(), 0.f);
         }
 
         TEST_METHOD(GapMiddle)
@@ -33,14 +35,24 @@ namespace advent2016tests
             GoodIPFinder finder;
             finder.addBlacklistRule("0-4");
             finder.addBlacklistRule("4294967291-4294967295");
-            Assert::AreEqual((float)3, (float)finder.getFirstGoodIP(), 0.f);
+            finder.findFirstGoodIP();
+            Assert::AreEqual((float)5, (float)finder.getFirstGoodIP(), 0.f);
         }
 
         TEST_METHOD(GapAtEnd)
         {
             GoodIPFinder finder;
             finder.addBlacklistRule("0-4294967290");
-            Assert::AreEqual((float)3, (float)finder.getFirstGoodIP(), 0.f);
+            finder.findFirstGoodIP();
+            Assert::AreEqual((float)4294967291, (float)finder.getFirstGoodIP(), 0.f);
+        }
+
+        TEST_METHOD(NoGapsSameAsAllGood)
+        {
+            GoodIPFinder finder;
+            finder.addBlacklistRule("0-4294967295");
+            finder.findFirstGoodIP();
+            Assert::AreEqual((float)0, (float)finder.getFirstGoodIP(), 0.f);
         }
 
     };

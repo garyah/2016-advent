@@ -14,6 +14,7 @@ int main()
     {
         finder.addBlacklistRule(line);
     }
+    finder.findFirstGoodIP();
     (void)printf("%u\n", finder.getFirstGoodIP());
     return 0;
 }
