@@ -26,5 +26,12 @@ namespace advent2016tests
             Assert::AreEqual((float)38, (float)counter.getNumberSafeTiles(), 0.f);
         }
 
+        TEST_METHOD(OneRowCorrect)
+        {
+            SafeTileCounter counter;
+            counter.countTiles(".^^.^.^^^^", 1);
+            Assert::AreEqual((float)3, (float)counter.getNumberSafeTiles(), 0.f);
+        }
+
     };
 }
