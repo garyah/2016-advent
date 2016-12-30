@@ -69,8 +69,6 @@ namespace Advent2016
         }
 
     private:
-
-    private:
         Grid m_grid;
         unsigned m_numViable;
     };

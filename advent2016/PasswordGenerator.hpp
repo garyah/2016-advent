@@ -46,8 +46,6 @@ namespace Advent2016
         }
 
     private:
-
-    private:
         std::string m_password;
     };
 }

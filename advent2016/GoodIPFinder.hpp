@@ -99,8 +99,6 @@ namespace Advent2016
         }
 
     private:
-
-    private:
         RangeMap m_blacklistMap;
         unsigned m_firstGoodIP;
         unsigned m_goodIPCount;

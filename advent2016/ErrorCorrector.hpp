@@ -62,8 +62,6 @@ namespace Advent2016
         }
 
     private:
-
-    private:
         CountMaps m_countMaps;
         std::string m_corrected;
     };
