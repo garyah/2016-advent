@@ -8,12 +8,12 @@ using namespace Advent2016;
 
 int main()
 {
-	char *line = NULL;
-	while ((line = InputReader::ReadLine()) != NULL)
-	{
+    char *line = NULL;
+    while ((line = InputReader::ReadLine()) != NULL)
+    {
         PasswordGenerator generator;
         generator.generateInOrder(line);
         (void)printf("%s\n", generator.getPassword());
-	}
-	return 0;
+    }
+    return 0;
 }

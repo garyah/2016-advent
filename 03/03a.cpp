@@ -10,8 +10,8 @@ int main()
 {
     TriangleValidator validator;
     char *line = NULL;
-	while ((line = InputReader::ReadLine()) != NULL)
-	{
+    while ((line = InputReader::ReadLine()) != NULL)
+    {
         validator.addRow(line);
     }
     (void)printf("%u\n", validator.getNumValidByRows());

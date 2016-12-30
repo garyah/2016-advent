@@ -10,10 +10,10 @@ int main()
 {
     PasswordScrambler scrambler;
     char *line = NULL;
-	while ((line = InputReader::ReadLine()) != NULL)
-	{
+    while ((line = InputReader::ReadLine()) != NULL)
+    {
         //scrambler.addRule(line);
-	}
+    }
     //scrambler.scramble("abcdefgh");
     //(void)printf("%s\n", scrambler.getPassword());
     return 0;

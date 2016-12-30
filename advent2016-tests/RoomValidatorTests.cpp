@@ -7,11 +7,11 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace Advent2016;
 
 namespace advent2016tests
-{		
-	TEST_CLASS(RoomValidatorTests)
-	{
-	public:
-		
+{
+    TEST_CLASS(RoomValidatorTests)
+    {
+    public:
+        
         TEST_METHOD(TestMethod04a1)
         {
             RoomValidator validator;

@@ -7,7 +7,7 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace Advent2016;
 
 namespace advent2016tests
-{		
+{
     TEST_CLASS(PasswordGeneratorTests)
     {
     public:

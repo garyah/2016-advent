@@ -10,10 +10,10 @@ int main()
 {
     ViableNodePairCounter counter;
     char *line = NULL;
-	while ((line = InputReader::ReadLine()) != NULL)
-	{
+    while ((line = InputReader::ReadLine()) != NULL)
+    {
         counter.addNode(line);
-	}
+    }
     counter.countViable();
     (void)printf("%u\n", counter.getNumViable());
     return 0;

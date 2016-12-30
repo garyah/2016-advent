@@ -7,17 +7,17 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 using namespace Advent2016;
 
 namespace advent2016tests
-{		
-	TEST_CLASS(TriangleValidatorTests)
-	{
-	public:
-		
-		TEST_METHOD(TestMethod03a1)
-		{
+{
+    TEST_CLASS(TriangleValidatorTests)
+    {
+    public:
+        
+        TEST_METHOD(TestMethod03a1)
+        {
             TriangleValidator validator;
             validator.addRow("5 10 25");
             Assert::AreEqual((float)0, (float)validator.getNumValidByRows(), 0.f);
-		}
+        }
 
         TEST_METHOD(OneValidByRowsReturnsOne)
         {

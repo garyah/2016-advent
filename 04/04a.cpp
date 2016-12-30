@@ -10,8 +10,8 @@ int main()
 {
     RoomValidator validator;
     char *line = NULL;
-	while ((line = InputReader::ReadLine()) != NULL)
-	{
+    while ((line = InputReader::ReadLine()) != NULL)
+    {
         validator.addRoom(line);
     }
     (void)printf("%u\n", validator.getSumOfIds());

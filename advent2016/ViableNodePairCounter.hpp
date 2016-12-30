@@ -4,8 +4,8 @@
 
 namespace Advent2016
 {
-	class ViableNodePairCounter
-	{
+    class ViableNodePairCounter
+    {
         typedef struct
         {
             unsigned size;

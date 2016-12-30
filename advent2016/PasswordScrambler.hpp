@@ -2,13 +2,13 @@
 
 namespace Advent2016
 {
-	class PasswordScrambler
-	{
-	public:
+    class PasswordScrambler
+    {
+    public:
         PasswordScrambler() :
             m_password()
-		{
-		}
+        {
+        }
 
         void addRule(const char *rule)
         {
@@ -19,13 +19,13 @@ namespace Advent2016
         }
 
         const char *getPassword() const
-		{
-			return m_password.c_str();
-		}
+        {
+            return m_password.c_str();
+        }
 
-	private:
+    private:
 
-	private:
-		std::string m_password;
-	};
+    private:
+        std::string m_password;
+    };
 }

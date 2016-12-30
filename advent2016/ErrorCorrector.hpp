@@ -5,8 +5,8 @@
 
 namespace Advent2016
 {
-	class ErrorCorrector
-	{
+    class ErrorCorrector
+    {
         typedef std::map<char, unsigned> CountMap;
         typedef std::vector<CountMap> CountMaps;
 

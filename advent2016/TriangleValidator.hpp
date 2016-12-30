@@ -4,8 +4,8 @@
 
 namespace Advent2016
 {
-	class TriangleValidator
-	{
+    class TriangleValidator
+    {
     public:
         TriangleValidator() :
             m_numValidByRows(0),

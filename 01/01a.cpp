@@ -10,12 +10,12 @@ using namespace Advent2016;
 
 int main()
 {
-	char *line = NULL;
-	while ((line = InputReader::ReadLine()) != NULL)
-	{
+    char *line = NULL;
+    while ((line = InputReader::ReadLine()) != NULL)
+    {
         GridMoveParser parser;
         parser.parse(line);
         (void)printf("%u\n", parser.getShortestPathDistance());
-	}
-	return 0;
+    }
+    return 0;
 }

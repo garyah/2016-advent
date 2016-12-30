@@ -4,8 +4,8 @@
 
 namespace Advent2016
 {
-	class GridMoveParser
-	{
+    class GridMoveParser
+    {
         typedef enum
         {
             North = 0,
