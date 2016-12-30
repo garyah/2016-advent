@@ -11,7 +11,7 @@ namespace Advent2016
 
     public:
         GoodIPFinder() :
-            m_rangeMap(),
+            m_blacklistMap(),
             m_firstGoodIP(0)
         {
         }
@@ -20,27 +20,27 @@ namespace Advent2016
         {
             unsigned start = 0, end = 0;
             (void)sscanf(rule, "%u-%u", &start, &end);
-            m_rangeMap[start] = end;
+            m_blacklistMap[start] = end;
         }
 
         void findFirstGoodIP()
         {
 #ifdef DEBUG_TEST
-            for (auto range : m_rangeMap)
+            for (auto range : m_blacklistMap)
             {
                 (void)printf("%u-%u\n", range.first, range.second);
             }
 #endif // DEBUG_TEST
 
             m_firstGoodIP = 0;
-            auto rangeIter = m_rangeMap.begin();
+            auto rangeIter = m_blacklistMap.begin();
             if (rangeIter->first)
             {
                 // gap at start includes first good
                 return;
             }
             auto maxEnd = rangeIter->second;
-            for (++rangeIter; maxEnd < UINT32_MAX && rangeIter != m_rangeMap.end(); ++rangeIter)
+            for (++rangeIter; maxEnd < UINT32_MAX && rangeIter != m_blacklistMap.end(); ++rangeIter)
             {
                 if (rangeIter->first > maxEnd + 1)
                 {
@@ -67,7 +67,7 @@ namespace Advent2016
     private:
 
     private:
-        RangeMap m_rangeMap;
+        RangeMap m_blacklistMap;
         unsigned m_firstGoodIP;
     };
 }
