@@ -1,20 +1,19 @@
 #include <stdio.h>
 
 #include "../common/InputReader.hpp"
-#include "../advent2016/ViableNodePairCounter.hpp"
+#include "../advent2016/SafeTileCounter.hpp"
 
 using namespace Common;
 using namespace Advent2016;
 
 int main()
 {
-    ViableNodePairCounter counter;
     char *line = NULL;
     while ((line = InputReader::ReadLine()) != NULL)
     {
-        counter.addNode(line);
+        SafeTileCounter counter;
+        counter.countTiles(line, 40);
+        (void)printf("%u\n", counter.getNumberSafeTiles());
     }
-    counter.countViable();
-    (void)printf("%u\n", counter.getNumViable());
     return 0;
 }

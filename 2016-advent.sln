@@ -23,6 +23,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "advent2016", "advent2016", 
 		advent2016\PasswordGenerator.hpp = advent2016\PasswordGenerator.hpp
 		advent2016\PasswordScrambler.hpp = advent2016\PasswordScrambler.hpp
 		advent2016\RoomValidator.hpp = advent2016\RoomValidator.hpp
+		advent2016\SafeTileCounter.hpp = advent2016\SafeTileCounter.hpp
 		advent2016\TriangleValidator.hpp = advent2016\TriangleValidator.hpp
 		advent2016\ViableNodePairCounter.hpp = advent2016\ViableNodePairCounter.hpp
 	EndProjectSection
